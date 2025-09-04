@@ -53,7 +53,22 @@ nav ul li a:hover::after{
 
 }
 .header-text{
-    margin-top: 10%;
+    margin-top: 7%;
     font-size: 20px;
     text-align: center;
+}
+.header-text p2{
+    margin-top: 10%;
+    font-size: 20px;
+    color: aqua; 
+}
+.myImage{
+    margin-top: 2%;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    display: block;
+    transform: translateX(80%);
 }
