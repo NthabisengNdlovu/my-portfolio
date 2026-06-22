@@ -1,95 +1,528 @@
-<!DOCTYPE html>
+```html
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nthabiseng Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <div class="logo-text">
-                <h1>Nthabiseng Ndlovu</h1>
-            </div>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-text">
-            <h1>Nthabiseng Charity Ndlovu</h1>
-            <p2>Aspring Software Developer</p2>
-            
-        </div>
-        
-            <img src="images/grad.jpg" class="myImage" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nthabiseng Ndlovu | Portfolio</title>
 
-        
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #0f172a;
+        color: #fff;
+      }
+
+      /* Navigation */
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: #111827;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #38bdf8;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #38bdf8;
+      }
+
+      /* Hero Section */
+
+
+#home{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:120px 10%;
+    background:linear-gradient(to right,#0f172a,#1e293b);
+}
+
+.hero-image img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    box-shadow:0 0 25px rgba(56,189,248,0.5);
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero-content h1 span{
+    color:#38bdf8;
+}
+
+.hero-content h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0284c7;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #home{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .hero-image img{
+        width:250px;
+        height:250px;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-content h3{
+        font-size:24px;
+    }
+}
+
+
+      /* Sections */
+
+      section {
+        padding: 80px 10%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 40px;
+        color: #38bdf8;
+      }
+
+      /* About */
+
+      .about {
+        text-align: center;
+        line-height: 1.8;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      /* Skills */
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .skill-card {
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-card h3 {
+        color: #38bdf8;
+        margin-bottom: 10px;
+      }
+
+      /* Experience */
+
+      .card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .card h3 {
+        color: #38bdf8;
+      }
+
+      .card h4 {
+        margin: 10px 0;
+      }
+
+      .card ul {
+        margin-top: 15px;
+        padding-left: 20px;
+      }
+
+      .card ul li {
+        margin-bottom: 10px;
+      }
+
+.experience-container{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.experience-container .card{
+    height:100%;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .experience-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+      /* Education */
+
+      .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      /* Contact */
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact p {
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+      /* Footer */
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #111827;
+      }
+
+      /* Mobile */
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+        }
+
+        nav ul {
+          margin-top: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero-content h1 {
+          font-size: 40px;
+        }
+
+        .hero-content h3 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Nthabiseng.</div>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HOME -->
+
+   
+<section id="home">
+
+    <div class="hero-image">
+        <img src="images/grad.jpg" alt="Nthabiseng Ndlovu">
     </div>
-</div>
 
-<!--------ABOUT SECTION-------->
+    <div class="hero-content">
 
-<div id="about">
-     <div class="container">
-        <div class="row">
-            <div class="about-column-1">
-                 <img src="images/mine.jpg" class="about-me-image">
-            </div>
-           
-            <div class="about-column-2">
-                <h1>About Me</h1>
-                <p> I am a young innovative and creative Software developer with a positive approach to change, socially
-                  intelligent and proactively inclusive. I possess the ability to effectively navigate complex
-                  relationships with others from any background or culture and digitally literate. My academic
-                  strengths have greatly contributed to the development of my critical thinking, problem-solving and
-                  my innovation skills. I bring clear and effective communication to build professional connections
-                  with co-workers, management and clientele and have a sound fundamental understanding of the
-                  principles and methods of Information Technology.</p>
+        <h1>Hi, I'm <span>Nthabiseng Ndlovu</span></h1>
 
-                  <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('Education')">Education</p>
-                  </div>
+        <h3>Junior Frontend Software Developer</h3>
 
-                 <div class="tab-contents active-tab" id="Skills">
-                    <ul>
-                        <li><span>Basic</span><br>Html and Css</li>
-                        <li><span>Framework</span><br>React.js</li>
-                        <li><span>Design</span><br>Figma</li>
-                        <li><span>Backend</span><br>Laravel and SQL</li>
-                        <li><span>Exta</span><br>GitHub ,Clickup and Computer literate</li>
-                    </ul>
-                 </div>
+        <p>
+            Analytical Information Technology professional with expertise in
+            software development, optimizing system functionality, and
+            implementing efficient coding. Passionate about designing and
+            implementing software solutions that drive business growth and
+            improve operational efficiency.
+        </p>
 
-                  <div class="tab-contents" id="Education">
-                    <ul>
-                        <li><span>Web Development</span><br>Websites Development</li>
-                        <li><span>App Development</span><br>Building Android/iOS Applications</li>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                        
-                    </ul>
-                 </div>
+        <a href="#contact" class="btn">Contact Me</a>
 
-                  <div class="tab-contents" id="Education">
-                    <ul>
-                        <li><span>2017</span><br>Nhlalakahle Secondary School <br>Matric</li>
-                        <li><span>2025</span><br>Tshwane University of Technology <br>Nationa Diploma in Information Technology</li>  
-                    </ul>
-                 </div>
-            </div>
+    </div>
+
+</section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about">
+        <p>
+          I am an innovative and dedicated Information Technology professional
+          with experience in software development, web applications, mobile
+          applications, data management, and system implementation. I enjoy
+          solving problems, creating efficient software solutions, and
+          continuously learning new technologies. My goal is to contribute my
+          technical expertise and creativity toward building high-quality
+          software products that make a meaningful impact.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>Programming Languages</h3>
+            <p>C++, React JS, PL-SQL</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, React JS</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Database Management</h3>
+            <p>SQL, PL-SQL</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Microsoft Office</h3>
+            <p>MS Word, Excel, Outlook</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Software Development</h3>
+            <p>Research, Design, Testing, Debugging, Maintenance</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Professional Skills</h3>
+            <p>Planning & Organizing, Adaptability, Communication, Problem Solving</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <h2 class="section-title">Work Experience</h2>
+
+    <div class="experience-container">
+
+        <!-- Experience 1 -->
+        <div class="card">
+
+            <h3>Front-End Developer / UI Designer</h3>
+            <h4>Hiteknology Solutions (Pty) Ltd</h4>
+            <p>January 2026 – Present</p>
+
+            <ul>
+                <li>Assisted in the design, development, and testing of software applications.</li>
+                <li>Wrote clean, maintainable, and efficient code.</li>
+                <li>Debugged and resolved software issues and bugs.</li>
+                <li>Collaborated with cross-functional teams.</li>
+                <li>Participated in code reviews and knowledge sharing.</li>
+                <li>Documented development processes and project updates.</li>
+                <li>Stayed up to date with emerging technologies.</li>
+                <li>Designed user-friendly interfaces and improved user experience.</li>
+            </ul>
 
         </div>
 
-     </div>
-</div> 
-    
-</body>
+        <!-- Experience 2 -->
+        <div class="card">
+
+            <h3>Junior Software Developer</h3>
+            <h4>Ground Up Grinders</h4>
+            <p>May 2024 – March 2025</p>
+
+            <ul>
+                <li>Developed and troubleshot educational software programs.</li>
+                <li>Developed web and mobile applications.</li>
+                <li>Extracted and uploaded project data.</li>
+                <li>Created weekly project and work reports.</li>
+                <li>Implemented information technology processes.</li>
+                <li>Researched and implemented software solutions.</li>
+                <li>Wrote efficient and maintainable code.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">Education & Certifications</h2>
+
+    <div class="education-grid">
+
+        <div class="card">
+            <h3>National Diploma in Information Technology</h3>
+            <p>Tshwane University of Technology</p>
+            <p>2024</p>
+        </div>
+
+        <div class="card">
+            <h3>Matric</h3>
+            <p>Nhlalakahle Secondary School</p>
+            <p>2017</p>
+        </div>
+
+        <div class="card">
+            <h3>FNB App Academy</h3>
+            <p>Full Stack Development Certificate</p>
+            <p>2025</p>
+        </div>
+
+        <div class="card">
+            <h3>SheCodes Foundation</h3>
+            <p>Web Development Training Program</p>
+            <p>2026</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+
+      <div class="contact">
+        <p><strong>Name:</strong> Nthabiseng Ndlovu</p>
+
+        <p><strong>Phone:</strong> 061 891 6908</p>
+
+        <p><strong>Email:</strong> nthaby9870@gmail.com</p>
+
+        <p><strong>Address:</strong> Spruitview 1431</p>
+
+        <br />
+
+        <h3 style="color: #38bdf8">Reference</h3>
+
+        <p>
+          <strong>Tumelo Cholo</strong><br />
+          Managing Director at Ground Up Grinders<br />
+          072 175 4119
+          <br />
+          <br />
+
+          <strong>Sebaka</strong><br />
+          Managing Director at Hiteknology Solutions (Pty) Ltd<br />
+          072 175 4119
+
+
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Nthabiseng Ndlovu | Software Developer Portfolio</p>
+    </footer>
+  </body>
 </html>
+
